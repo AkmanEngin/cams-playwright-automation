@@ -5,11 +5,13 @@ dotenv.config({ path: "./.env" });
 export class BasePage {
   page: Page;
   isoneUrl: string;
+  camsUrl: string;
 
 
   constructor(page: any) {
     this.page = page;
     this.isoneUrl = process.env.ISONE_URL as string;
+    this.camsUrl = process.env.CAMS_URL as string;
 
   }
 

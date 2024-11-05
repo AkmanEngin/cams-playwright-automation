@@ -3,7 +3,8 @@ import { Browser, Page, chromium, firefox, webkit } from "@playwright/test";
 import { Context } from "vm";
 import { initElements } from "../globalPagesSetup";
 
-const BROWSER_TYPE: string = "chrome"; // Default browser type
+// const BROWSER_TYPE: string = "chrome"; // Default browser type
+const BROWSER_TYPE = process.env.browser as string;
 const WIDTH: number = 1920; // Default screen width
 const HEIGHT: number = 1080; // Default screen height
 const DEFAULT_TIMEOUT: number = 30000; // default timeout in milliseconds

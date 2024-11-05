@@ -3,14 +3,20 @@ import { expect } from '@playwright/test';
 import { homePage } from '../../globalPagesSetup';
 import { BrowserUtility } from '../../utilities/BrowserUtility';
 import { HomePage } from '../../pages/HomePage';
+import { env } from 'process';
 
 
 Given('user is on the home page', async function () {
     await homePage.page.goto(homePage.isoneUrl);
 });
 
+Given('user is on CAMS home page', async function () {
+    await homePage.page.goto(homePage.camsUrl);
+  });
+
+
 Then('user should be able to see title {string}', async function (string) {
-    await expect(homePage.page).toHaveTitle('ISO New England');
+    await expect(homePage.page).toHaveTitle(string);
 });
 
 Given('user enters {string} into the search bar', async function (string) {
